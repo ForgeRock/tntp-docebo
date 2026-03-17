@@ -1,0 +1,236 @@
+{
+    "_id": "provisioner.openicf/docebo",
+    "configurationProperties": {
+        "acceptSelfSignedCertificates": false,
+        "authToken": null,
+        "authenticationMethod": "TOKEN",
+        "authorizationTokenPrefix": "Bearer",
+        "clientCertAlias": null,
+        "clientCertPassword": null,
+        "clientId": "",
+        "clientSecret": "",
+        "connectionTimeout": 30,
+        "defaultHeaders": null,
+        "disableHostNameVerifier": false,
+        "disableHttpCompression": false,
+        "grantType": "refresh_token",
+        "httpProxyHost": null,
+        "httpProxyPassword": null,
+        "httpProxyPort": null,
+        "httpProxyUsername": null,
+        "jwtAlgorithm": null,
+        "jwtCert": null,
+        "jwtClaims": null,
+        "jwtExpiration": null,
+        "jwtKey": null,
+        "jwtPem": null,
+        "keyAlgorithm": null,
+        "login": null,
+        "maximumConnections": 10,
+        "objectTypes": {
+            "__ACCOUNT__": {
+                "exceptions": {},
+                "operations": {
+                    "CREATE": {
+                        "idPath": "data.user_id",
+                        "method": "post",
+                        "path": "/user",
+                        "requestMapping": {
+                            "firstname": "firstname",
+                            "lastname": "lastname",
+                            "password": "password",
+                            "userid": "userid"
+                        }
+                    },
+                    "DELETE": {
+                        "method": "delete",
+                        "path": "/user/delete",
+                        "requestBody": {
+                            "user_ids": [
+                            ]
+                        },
+                        "requestMapping": {
+                        }
+                    },
+                    "GET": {
+                        "idPath": "data.user_data.user_id",
+                        "method": "get",
+                        "namePath": "data.user_data.username",
+                        "path": "/user/{uid}",
+                        "responseMapping": {
+                            "__UID__": "data.user_data.user_id",
+                            "first_name": "data.user_data.first_name",
+                            "last_name": "data.user_data.last_name"
+                        }
+                    },
+                    "QUERY": {
+                        "idPath": "user_id",
+                        "method": "get",
+                        "namePath": "user_id",
+                        "path": "/user",
+                        "responseMapping": {
+                            "data.items": {
+                                "first_name": "first_name",
+                                "last_name": "last_name",
+                                "user_id": "user_id"
+                            }
+                        }
+                    },
+                    "UPDATE": {
+                        "idPath": "data.updated_id",
+                        "method": "patch",
+                        "path": "/user/{uid}",
+                        "requestMapping": {
+                            "firstname": "firstname",
+                            "lastname": "lastname"
+                        }
+                    }
+                },
+                "schema": [
+                    {
+                        "fieldName": "first_name",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "lastname",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "firstname",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "last_name",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "password",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "user_id",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "userid",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "user_ids",
+                        "flags": [],
+                        "type": "string"
+                    },
+                    {
+                        "fieldName": "username",
+                        "flags": [],
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "password": null,
+        "refreshToken": "",
+        "scope": null,
+        "serviceUri": "",
+        "tokenEndpoint": "",
+        "useBasicAuthForOauthTokenNeg": true
+    },
+    "connectorRef": {
+        "bundleName": "org.forgerock.openicf.connectors.rest-connector",
+        "bundleVersion": "[1.5.20.29, 1.6.0.0)",
+        "connectorName": "org.forgerock.openicf.connectors.rest.RestConnector",
+        "displayName": "Rest Connector",
+        "systemType": "provisioner.openicf"
+    },
+    "enabled": true,
+    "excludeUnmodified": false,
+    "objectTypes": {
+        "__ACCOUNT__": {
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "id": "__ACCOUNT__",
+            "nativeType": "__ACCOUNT__",
+            "properties": {
+                "__NAME__": {
+                    "nativeName": "__NAME__",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "first_name": {
+                    "nativeName": "first_name",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "firstname": {
+                    "nativeName": "firstname",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "last_name": {
+                    "nativeName": "last_name",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "lastname": {
+                    "nativeName": "lastname",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "password": {
+                    "nativeName": "password",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "user_id": {
+                    "nativeName": "user_id",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "user_ids": {
+                    "nativeName": "user_ids",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "userid": {
+                    "nativeName": "userid",
+                    "nativeType": "string",
+                    "type": "string"
+                },
+                "username": {
+                    "nativeName": "username",
+                    "nativeType": "string",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "operationTimeout": {
+        "AUTHENTICATE": 10000,
+        "CREATE": 15000,
+        "DELETE": 15000,
+        "GET": 15000,
+        "RESOLVEUSERNAME": 10000,
+        "SCHEMA": 10000,
+        "SCRIPT_ON_CONNECTOR": 15000,
+        "SCRIPT_ON_RESOURCE": 15000,
+        "SEARCH": 15000,
+        "SYNC": 15000,
+        "TEST": 5000,
+        "UPDATE": 15000,
+        "VALIDATE": 5000
+    },
+    "resultsHandlerConfig": {
+        "enableAttributesToGetSearchResultsHandler": true,
+        "enableCaseInsensitiveFilter": false,
+        "enableFilteredResultsHandler": false,
+        "enableNormalizingResultsHandler": false
+    }
+}
+
