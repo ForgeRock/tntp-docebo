@@ -37,10 +37,10 @@ The current JSON is set to use **OAuth**-style token acquisition settings even t
 - `authenticationMethod`: `TOKEN`
 - `authorizationTokenPrefix`: `Bearer`
 - `grantType`: `refresh_token`
-- `refreshToken`: empty placeholder
-- `tokenEndpoint`: empty placeholder
-- `clientId`: empty placeholder
-- `clientSecret`: empty placeholder
+- `refreshToken`: 
+- `tokenEndpoint`: 
+- `clientId`: 
+- `clientSecret`: 
 - `useBasicAuthForOauthTokenNeg`: `true`
 
 ## Supported schema
