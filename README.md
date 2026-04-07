@@ -90,4 +90,6 @@ Once you’ve updated the JSON file, deploy the connector by making the followin
 
 - Replace `<FQDN>` with your Ping Advanced Identity Cloud tenant domain  
 - Replace `<CONNECTOR_NAME>` with the name you want to assign to this connector  
-- Use the contents of your updated `docebo_connector.json` as the request body  
+- Use the contents of your updated `docebo_connector.json` as the request body
+
+CRUD operations are now enabled for the Docebo connector
