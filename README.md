@@ -30,9 +30,47 @@ The SaaS REST connector is configured over REST rather than directly through the
 
 ## Configuration
 
+### Create the SaaS REST Application
+
+Before configuring the connector operations, you must first create a **SaaS REST application** in Ping Advanced Identity Cloud.
+
+Follow these steps:
+
+### 1. Navigate to Applications
+
+- In the Ping Advanced Identity Cloud admin UI, go to **Applications**
+- Click **Browse App Catalog**
+
+### 2. Select the SaaS REST template
+
+- Search for **SaaS REST**
+- Select the **SaaS REST** application template (not “via Connector”)
+- Click **Next**
+
+### 3. Configure application details
+
+Provide the required application details:
+
+- **Name**: A unique name for your application (for example, `docebo-dev`)
+- **Description**: (Optional) აღწ description of the integration
+- **Owners**: Assign at least one application owner
+- **App Logo URI**: (Optional)
+- **Authoritative**: Leave unchecked unless this system is the source of truth for identities
+
+Click **Create Application**
+
+### 4. Open provisioning setup
+
+- After the application is created, navigate to the **Provisioning** tab
+- Click **Set up Provisioning**
+
+At this point, the application is created and ready for connector configuration.
+
+> The next step is to configure the connector by uploading the `docebo_connector.json` via the API.
+
 To use this connector, you need to update the `docebo_connector.json` file with your Docebo API details and authentication settings.
 
-### 1. Set authentication details
+### 5. Set authentication details
 
 The connector is configured to use a **Refresh token **. Update the following fields with values from your Docebo API application:
 
@@ -44,13 +82,13 @@ The connector is configured to use a **Refresh token **. Update the following fi
 - `clientSecret`: Your Docebo API client secret
 - `useBasicAuthForOauthTokenNeg`: Usually `true`
 
-### 2. Verify API base URL
+### 6. Verify API base URL
 
 Ensure the base URL in the connector matches your Docebo environment, for example:
 
     https://<your-docebo-domain>/manage/v1
 
-### 3. Apply the configuration
+### 7. Apply the configuration
 
 Once you’ve updated the JSON file, deploy the connector by making the following API call:
 
