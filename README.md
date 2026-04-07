@@ -67,14 +67,12 @@ To use this connector, you need to update the `docebo_connector.json` file with 
 ### 5. Set authentication details
 
 The connector is configured to use a **Refresh token **. Update the following fields with values from your Docebo API application:
-
-- `authenticationMethod`: Leave as `TOKEN`
-- `grantType`: Set to `refresh_token`
+- `authToken`: Your Docebo auth token
 - `refreshToken`: Your Docebo refresh token
+- `serviceUri`: The Docebo OAuth token endpoint URL
 - `tokenEndpoint`: The Docebo OAuth token endpoint URL
 - `clientId`: Your Docebo API client ID
 - `clientSecret`: Your Docebo API client secret
-- `useBasicAuthForOauthTokenNeg`: Usually `true`
 
 ### 6. Verify API base URL
 
