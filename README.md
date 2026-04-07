@@ -21,8 +21,6 @@ Before configuring the connector, make sure you have:
 - A Ping Advanced Identity Cloud tenant with access to connector configuration.
 - A Docebo API base URL.
 - A Docebo API authentication method and credentials.
-- Permission to create or update connector configurations in IDM / Advanced Identity Cloud.
-- Any required secure variables stored as tenant secrets or environment-specific values rather than hardcoded in source control.
 
 The SaaS REST connector is configured over REST rather than directly through the connector UI in the connector reference documentation. 
 
