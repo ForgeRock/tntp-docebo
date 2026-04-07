@@ -53,18 +53,13 @@ Provide the required application details:
 
 Click **Create Application**
 
-### 4. Open provisioning setup
+### 4. Download docebo_connector.json template
 
-- After the application is created, navigate to the **Provisioning** tab
-- Click **Set up Provisioning**
+Download the docebo_connector.json file
 
-At this point, the application is created and ready for connector configuration.
-
-> The next step is to configure the connector by uploading the `docebo_connector.json` via the API.
+### 5. Set docebo connectors values
 
 To use this connector, you need to update the `docebo_connector.json` file with your Docebo API details and authentication settings.
-
-### 5. Set authentication details
 
 The connector is configured to use a **Refresh token **. Update the following fields with values from your Docebo API application:
 - `authToken`: Your Docebo auth token
@@ -74,20 +69,22 @@ The connector is configured to use a **Refresh token **. Update the following fi
 - `clientId`: Your Docebo API client ID
 - `clientSecret`: Your Docebo API client secret
 
-### 6. Verify API base URL
 
-Ensure the base URL in the connector matches your Docebo environment, for example:
-
-    https://<your-docebo-domain>/manage/v1
-
-### 7. Apply the configuration
+### 6. Apply the configuration to PingAIC
 
 Once you’ve updated the JSON file, deploy the connector by making the following API call:
 
-    PUT https://openam-<FQDN>.forgeblocks.com/openidm/config/provisioner.openicf/<CONNECTOR_NAME>?waitForCompletion=true
+```
+curl --location --request PUT 'https://{FQDN}.com/openidm/config/provisioner.openicf/{CONNECTOR_NAME}?waitForCompletion=true' \
+--header 'authorization: Bearer <BEARER TOKEN>'\
+--header 'content-type: application/json' \
+--data '{docebo_connector.json}'
+```
 
 - Replace `<FQDN>` with your Ping Advanced Identity Cloud tenant domain  
 - Replace `<CONNECTOR_NAME>` with the name you want to assign to this connector  
 - Use the contents of your updated `docebo_connector.json` as the request body
+
+### 7. Test the connector
 
 CRUD operations are now enabled for the Docebo connector
