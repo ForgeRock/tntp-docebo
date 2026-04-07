@@ -38,7 +38,7 @@ Follow these steps:
 ### 2. Select the SaaS REST template
 
 - Search for **SaaS REST**
-- Select the **SaaS REST** application template (not “via Connector”)
+- Select the **SaaS REST** application template 
 - Click **Next**
 
 ### 3. Configure application details
