@@ -46,7 +46,7 @@ Follow these steps:
 Provide the required application details:
 
 - **Name**: A unique name for your application (for example, `docebo-dev`)
-- **Description**: (Optional) აღწ description of the integration
+- **Description**: (Optional) description of the integration
 - **Owners**: Assign at least one application owner
 - **App Logo URI**: (Optional)
 - **Authoritative**: Leave unchecked unless this system is the source of truth for identities
