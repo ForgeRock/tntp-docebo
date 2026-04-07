@@ -24,10 +24,6 @@ Before configuring the connector, make sure you have:
 
 The SaaS REST connector is configured over REST rather than directly through the connector UI in the connector reference documentation. 
 
-## Files
-
-- `docebo_connector.json` — the connector configuration for the Docebo integration.
-
 ## Configuration
 
 ### Create the SaaS REST Application
