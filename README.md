@@ -26,20 +26,47 @@ The SaaS REST connector is configured over REST rather than directly through the
 
 ## Files
 
-- `docebo_connector.json` — the connector configuration for the Docebo integration. 
+- `docebo_connector.json` — the connector configuration for the Docebo integration.
 
-## Connector authentication model
+## Configuration
 
-The current JSON is set to use **OAuth**-style token acquisition settings even though `authenticationMethod` is currently set to `TOKEN` in the file. Specifically, the config includes:
+To use this connector, you need to update the `docebo_connector.json` file with your Docebo API details and authentication settings.
 
-- `authenticationMethod`: `TOKEN`
-- `authorizationTokenPrefix`: `Bearer`
-- `grantType`: `refresh_token`
-- `refreshToken`: 
-- `tokenEndpoint`: 
-- `clientId`: 
-- `clientSecret`: 
-- `useBasicAuthForOauthTokenNeg`: `true`
+### 1. Set authentication details
+
+The connector is configured to use a **Refresh token **. Update the following fields with values from your Docebo API application:
+
+- `authenticationMethod`: Leave as `TOKEN`
+- `grantType`: Set to `refresh_token`
+- `refreshToken`: Your Docebo refresh token
+- `tokenEndpoint`: The Docebo OAuth token endpoint URL
+- `clientId`: Your Docebo API client ID
+- `clientSecret`: Your Docebo API client secret
+- `useBasicAuthForOauthTokenNeg`: Usually `true`
+
+### 2. Verify API base URL
+
+Ensure the base URL in the connector matches your Docebo environment, for example:
+
+    https://<your-docebo-domain>/manage/v1
+
+### 3. Apply the configuration
+
+Once you’ve updated the JSON file, deploy the connector by making the following API call:
+
+    PUT https://openam-<FQDN>.forgeblocks.com/openidm/config/provisioner.openicf/<CONNECTOR_NAME>?waitForCompletion=true
+
+- Replace `<FQDN>` with your Ping Advanced Identity Cloud tenant domain  
+- Replace `<CONNECTOR_NAME>` with the name you want to assign to this connector  
+- Use the contents of your updated `docebo_connector.json` as the request body  
+
+### What happens next?
+
+After the configuration is applied:
+
+- The connector will use the refresh token to obtain access tokens automatically  
+- All provisioning operations (create, update, delete, query) will use the Docebo REST API  
+- You can begin mapping identities to the `__ACCOUNT__` object in Ping Advanced Identity Cloud  
 
 ## Supported schema
 
